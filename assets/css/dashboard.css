@@ -1,0 +1,67 @@
+.totals {
+    background: transparent;
+    display: flex;
+}
+
+.left-total {
+    background: transparent;
+}
+
+.left-total, .right-total {
+    display: flex;
+}
+
+.right-total {
+    background: transparent;
+}
+
+.total-desc {
+    display: grid;
+    background: transparent;
+    text-align: right;
+    padding-right: 0;
+}
+
+.total-header {
+    margin: 0;
+}
+
+.total-currency {
+    margin: 0;
+    color: grey;
+}
+
+.total-amount {
+    margin: 0;
+    padding-left: 2%;
+}
+
+.total-figure {
+    margin: 0;
+}
+
+.essentials hr {
+    margin: 0 10%;
+    width: 80%;
+}
+
+.first-row {
+    background: transparent;
+    display: flex;
+}
+
+.second-row {
+    background: transparent;
+    display: flex;
+}
+
+.fixed-table-toolbar .bs-bars, .fixed-table-toolbar .search,
+ .fixed-table-toolbar .columns {
+    margin-top: 0px; 
+    margin-bottom: 0px;
+}
+
+.btn {
+    border-radius: 4px;
+    border-color: rgb(204, 204, 204);
+}

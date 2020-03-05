@@ -1,0 +1,27 @@
+Date: Fri, 17 Jan 2020 17:54:34 +0100
+From: "Cheyn Team" <noreply@cheyn.com>
+Return-Path: <noreply@cheyn.com>
+To: constance@naviware.com
+Subject: =?UTF-8?Q?You=20Just=20Logged=20In!?=
+Reply-To: <noreply@cheyn.com>
+User-Agent: CodeIgniter
+X-Sender: noreply@cheyn.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: <5e21e6cb38652@cheyn.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Welcome back, Constance, to Cheyn!
+Beware of the little expenses: a small leak will sink a great ship!
+
+You logged in at 5:54 PM from ::1
+
+If this wasn't you and you believe your account may have been compromised,
+then you need to take a few steps to make sure your account is secure.To
+start, reset your password now using the link below:
+http://localhost/Cheyn/www.cheyn.com/reset
+
+Yours sincerely,
+Your Cheyn Team.
