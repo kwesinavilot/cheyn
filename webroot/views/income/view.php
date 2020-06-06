@@ -12,22 +12,15 @@
             <!-- PAGE CONTENT -->
             <div class="content">
                 <section duty="main-content" class="xcontent">
-                    <!-- <div class="col-lg-12 pageheader">
-                        <div class="col-lg-12">
-                            <h4><?php print ucwords(HEADER); ?></h4>
-                            <hr>
-                        </div>
-                    </div> -->
-
                     <aside class="col-lg-12 marg">
                         <div duty="further-entry-details" class="shade chart-container">
                             <div class="pageheader marg-sub col-lg-12 paddoff">
-                                <div class="pull-left" style="padding: 0.5%; float:left;">
+                                <div class="pull-left col-lg-7 col-md-6 col-sm-12 col" style="padding: 0.5%; float:left;">
                                     <h4 style="margin:0;"><?php print ucwords(HEADER); ?></h4>
                                 </div>
 
-                                <div class="pull-right col-lg-4 paddoff" style="float:right;">
-                                    <nav class="navbar navbar-expand-sm paddoff" style="float:right;">
+                                <div class="pull-right col-lg-5 col-md-6 col-sm-12 col paddoff" style="float:right;">
+                                    <nav class="navbar navbar-expand-sm paddoff ed_opts">
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
                                                 <a class="nav-link" href="<?php print base_url() . 'income/edit/' . $content->id; ?>">Edit</a>
@@ -44,15 +37,15 @@
 
                                 <div duty="entry-title" class="pull-left col-lg-12">
                                     <ul class="list-group list-group-horizontal">
-                                        <li class="list-group-item">
+                                        <li class="list-group-item col-lg-4 col-md-4 col-sm-4 col">
                                             <span>DATE:</span> <?php $date = date_create($content->entry_date); echo date_format($date,"F, j Y");//$content->entry_date; ?>
                                         </li>
 
-                                        <li class="list-group-item">
+                                        <li class="list-group-item col-lg-4 col-md-4 col-sm-4 col">
                                             <span>BUCKET:</span> <?php print ucwords($content->bucket); ?>
                                         </li>
 
-                                        <li class="list-group-item">
+                                        <li class="list-group-item col-lg-4 col-md-4 col-sm-4 col">
                                             <span>AMOUNT:</span> <?php print $content->amount; ?>
                                         </li>
                                     </ul> 

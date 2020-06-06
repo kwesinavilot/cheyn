@@ -5,10 +5,10 @@
             $this->load->view("view", $data);
         }
 
-        public function logout() {
-            $this->session->sess_destroy();
-            redirect("home");
-        }
+        // public function logout() {
+        //     $this->session->sess_destroy();
+        //     redirect("home");
+        // }
 
         //This method is for viewing the details of an entry
         public function t($id) {

@@ -8,7 +8,7 @@ $(document).ready(function(){
         function(clickEvent){
             clickEvent.preventDefault();    //Prevent link from going through
 
-            $('#signup-content').css("left", "270px");
+            $('#signup-content').css("left", "43%");
             $('#signup-content').css("visibility", "visible");
         }
     );
@@ -31,7 +31,7 @@ $(document).ready(function(){
             $('#signup-content').css("visibility", "hidden");
 
             //Show log in content
-            $('#login-content').css("left", "270px");
+            $('#login-content').css("left", "43%");
             $('#login-content').css("visibility", "visible");
         }
     );
@@ -41,7 +41,7 @@ $(document).ready(function(){
         function(clickEvent){
             clickEvent.preventDefault();    //Prevent link from going through
 
-            $('#login-content').css("left", "270px");
+            $('#login-content').css("left", "43%");
             $('#login-content').css("visibility", "visible");
         }
     );
@@ -64,7 +64,7 @@ $(document).ready(function(){
             $('#login-content').css("visibility", "hidden");
 
             //Show the sign up content
-            $('#signup-content').css("left", "270px");
+            $('#signup-content').css("left", "43%");
             $('#signup-content').css("visibility", "visible");
         }
     );
@@ -87,7 +87,7 @@ $(document).ready(function(){
             $('#login-content').css("visibility", "hidden");
 
             //Show the sign up content
-            $('#reset-content').css("left", "270px");
+            $('#reset-content').css("left", "43%");
             $('#reset-content').css("visibility", "visible");
         }
     );
@@ -102,7 +102,7 @@ $(document).ready(function(){
             $('#reset-content').css("visibility", "hidden");
 
             //Show log in content
-            $('#login-content').css("left", "270px");
+            $('#login-content').css("left", "43%");
             $('#login-content').css("visibility", "visible");
         }
     );
@@ -117,7 +117,7 @@ $(document).ready(function(){
             $('#reset-content').css("visibility", "hidden");
 
             //Show the sign up content
-            $('#signup-content').css("left", "270px");
+            $('#signup-content').css("left", "43%");
             $('#signup-content').css("visibility", "visible");
         }
     );

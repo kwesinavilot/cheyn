@@ -1,7 +1,9 @@
 <?php
-    class Remissions extends CI_Controller {
+    class Targets extends CI_Controller {
         public function index() {
-            $this->load->view("remissions");
+
+
+            $this->load->view("targets");
         }
 
         // public function logout() {

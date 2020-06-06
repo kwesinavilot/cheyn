@@ -15,8 +15,8 @@
     -webkit-transition: all 0.30s ease 0s;
     transition: all 0.30s ease 0s;
     visibility: hidden;
-    height: 100vh;
     max-width: 60%;
+    height: 100vh;
     opacity: 1;
     cursor: default;
     border-radius: 0px;
@@ -60,7 +60,15 @@
     text-indent: 10px;
     line-height: 2;
     font-size: medium;
-    margin-bottom: 5%;
+}
+
+.elem-container {
+  margin-bottom: 5%;
+}
+
+.fm_error {
+  text-align: left;
+  color: crimson;
 }
 
 .content-form-elems:focus {
@@ -109,6 +117,10 @@
     height: auto;
     color: darkkhaki;
     cursor: pointer;
+}
+
+#login-form > .password-toggle {
+  top: 36%;
 }
 
   /* Customize the label (the container) */
@@ -180,4 +192,29 @@
   .down-liner {
     text-align: center;
     margin-top: 5%;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    /* .action-content {
+      max-width: 70%;
+      left: 33%;
+    } */
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    /* .action-content {
+      max-width: 60%;
+    } */
   }

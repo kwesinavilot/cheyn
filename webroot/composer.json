@@ -1,0 +1,12 @@
+{
+    "name": "lilna/webroot",
+    "description": "Cheyn",
+    "type": "project",
+    "authors": [
+        {
+            "name": "KwesiNavilot",
+            "email": "36965330+KwesiNavilot@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

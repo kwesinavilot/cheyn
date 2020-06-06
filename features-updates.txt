@@ -63,16 +63,16 @@ Changelog and New Features
 ~Pie chart is refresh-on-update
 
 -----v1.1.19 ~ 11/01/20-----
-~Added Accounts page for user account settings
+~ Added Accounts page for user account settings
 ~Easy updates of user details with real time effects
 ~Easy updates of user passwords with real time effects
 
 -----v1.1.20 ~ 18/01/20-----
-~Added monthly Bar Graphs
-~Added email notifications for certain important user actions
-~Set chart-related defaults for new accounts
+~ Added monthly Bar Graphs
+~ Added email notifications for certain important user actions
+~ Set chart-related defaults for new accounts
 ~Added duplicate Bucket name check at Bucket creation
-~Added automated, refresh-on-update Bar Chart
+~ Added automated, refresh-on-update Bar Chart
 
 -----v1.1.21 ~ 04/02/20-----
 ~ Added delete functionality to Incomes
@@ -81,4 +81,17 @@ Changelog and New Features
 -----v1.1.22 ~ 23/02/20-----
 ~ Added delete functionality to Expenses
 ~ Added edit functionality to Expenses
-~Added Insights and Edit pages for Buckets
+~ Added Insights and Edit pages for Buckets
+
+-----v1.1.23 ~ 12/03/20-----
+~ Added bucket proportionals to Dashboard
+~ Added profile picture functionality to Accounts
+~ Added profile picture section in database for users
+
+-----v1.1.26 ~ 22/04/20-----
+~Added styled error notices
+~Remodified page view to suite most mobile devices
+~Modified the Accounts page for mobile
+
+-----v1.1.27 ~ 23/04/20-----
+~Modified Incomes page for mobile

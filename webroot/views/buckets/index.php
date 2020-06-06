@@ -25,7 +25,7 @@
                                 </div>
                             </div>
 
-                            <div class="bucket-table">
+                            <div class="bucket-table table-responsive">
                                 <table class="table table-hover table-bordered">
                                     <thead>
                                         <tr>
@@ -94,22 +94,22 @@
                             
                                 <div class="fixed-table-toolbar marg-sub">
                                     <!-- Section Header -->
-                                    <div class="pull-left" style="padding: 0.5%;">
+                                    <div class="pull-left" style="padding: 0.5%; float:left;">
                                         <h4 style="margin:0;">Add New Bucket</h4>
                                     </div>
                                 </div>
 
                                 <div class="main-entry-form row">
                                     <div class="top-entry col-lg-12 marg-sub" style="padding:0;">
-                                        <div class="pull-left form-group col-lg-6" style="margin:0; float:left;">
+                                        <div class="pull-left form-group resp-form col-lg-6 col-md-6 col-sm-7 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 10%; float:left;">Name</label>
-                                            <input class="form-control pull-right" style="width:88%; float:right;" max-length="25" type="text" name="name" value="<?php echo set_value('name'); ?>" placeholder="Enter bucket name...">
+                                            <input class="form-control pull-right title" max-length="25" type="text" name="name" value="<?php echo set_value('name'); ?>" placeholder="Enter bucket name...">
                                             <?php echo form_error('name'); ?>
                                         </div>
 
-                                        <div class="pull-right form-group col-lg-4" style="margin:0; float:right;">
+                                        <div class="pull-right form-group col-lg-5 resp-form col-md-6 col-sm-4 col" style="float:right;">
                                             <label class="pull-left entry-label" style="width: 30%; float:left;">Label Color</label>
-                                            <select id="label-color" name="label-color" class="form-control" style="width: 68%;">
+                                            <select id="label-color" name="label-color" class="form-control blabel">
                                                 <option value="select" style="background: white;">Select label color</option>
                                                 <option id="bucket-color" value="red" style="color: white; background: red;">Red</option>
                                                 <option id="bucket-color" value="green" style="color: white; background: green;">Green</option>
@@ -129,7 +129,7 @@
                                         <textarea class="form-control" rows="5" name="description" max-length="5000" value="<?php echo set_value('description'); ?>" placeholder="Enter bucket description here..."></textarea>
                                     </div>
 
-                                    <div id="control" style="margin-left: 40%;" class="col-lg-3">
+                                    <div id="control" style="margin-left: 40%;" class="col-lg-3 col-md-5 col-sm-6">
                                         <button type="submit" class="col-lg-12 btn btn-outline-success">Add Bucket</button>
                                     </div>
                                 </div>

@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// Routings for login and signup
+$route['login'] = 'home/login';
+$route['signup'] = 'home/signup';
+$route['logout'] = 'home/logout';
+
 //Routings for expense
 $route['expenses/insert_record'] = 'expenses/insert_record';
 $route['expenses/edit/(:any)'] = 'expenses/edit/$1';
@@ -18,6 +23,9 @@ $route['buckets/insert_record'] = 'buckets/insert_record';
 $route['buckets/edit/(:any)'] = 'buckets/edit/$1';
 $route['buckets/insights/(:any)'] = 'buckets/insights/$1';
 $route['buckets'] = 'buckets/index';
+
+// Routings for Account
+//$route['accounts'] = 'accounts/index';
 
 //General routings
 $route['default_controller'] = 'home';

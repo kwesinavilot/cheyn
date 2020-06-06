@@ -35,6 +35,25 @@ header {
     padding: 1% 3%;
 }
 
+.paddoff {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.marg::after {
+  content: "";
+  display: block;
+  clear: both;
+  margin-bottom: 3%;
+}
+
+.marg-sub::after {
+  content: "";
+  display: block;
+  clear: both;
+  margin-bottom: 2%;
+}
+
 .right-header {
     
 }
@@ -47,6 +66,12 @@ header {
     
 }
 
+.left-header a:link, .left-header a:hover, 
+.left-header a:visited, .left-header a:active {
+  color: black;
+  text-decoration: none;
+}
+
 .action-link:link, .action-link:visited {
   color: black;
   font-size: large;
@@ -54,14 +79,6 @@ header {
 
 .action-link:hover, .action-link:active {
   font-weight: 500;
-}
-
-.content {
-    /* background-color: gold;
-    background-image: url(../img/fx.png);
-    height: -webkit-fill-available;
-    background-repeat: no-repeat;
-    background-position: center */
 }
 
 .center-text {
@@ -74,6 +91,7 @@ header {
     color: #fff;
     text-align: left;
     background-color: transparent;
+    max-width: 95%;
   }
   
   .center-text h5 {
@@ -100,3 +118,177 @@ header {
     width: 100%;
     text-align: center;
   }
+
+   /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    /* background: red; */
+  }
+
+  header {
+    background: transparent;
+    display: flex;
+    width: 100%;
+    position: relative;
+  }
+
+  .left-header {
+    text-align: center;
+    padding-top: 3%;
+  }
+
+  .left-header h4 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .right-header {
+    display: none;
+  }
+
+  .center-text h5 {
+    text-align: center;
+    font-size: 4em;
+  }
+
+  .center-text {
+    top: 20%;
+    left: 0;
+    z-index: 0;
+  }
+
+  .center-text p {
+    font-size: 18px;
+    text-indent: 0;
+    text-align: center;
+  }
+
+  .sm-opts-first a:link, .sm-opts-first a:visited {
+    display: block;
+    color: white;
+    text-decoration: none;
+  }
+
+  .sm-login {
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    line-height: 2;
+    height: 45px;
+    color: white;
+    -moz-transition: color cubic-bezier(1, -0.01, 0, 1.03) 300ms,background ease-out,300ms;
+    -ms-transition: color cubic-bezier(1, -0.01, 0, 1.03) 300ms,background ease-out,300ms;
+    -o-transition: color cubic-bezier(1, -0.01, 0, 1.03) 300ms,background ease-out,300ms;
+    -webkit-transition: color cubic-bezier(1, -0.01, 0, 1.03) 300ms,background ease-out,300ms;
+    transition: color cubic-bezier(1, -0.01, 0, 1.03) 300ms,background ease-out,300ms;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    background-color: gold;
+    border: 2px solid white;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1), 0 5px 5px 0 rgba(0,0,0,0.1);
+  }
+  
+  .sm-login:hover {
+    background-color: #ffffff;
+    color: gold;
+    cursor: pointer;
+  }
+  
+  .sm-signup {
+    color: #2eb82e;
+      text-align: center;
+  }
+
+.sm-opts-first a:hover,
+.sm-opts-first a:active {
+    color: gold;
+    text-decoration: none;
+}
+
+.sm-opts-second {
+	border-top: 1px solid #e8e8e8;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+.sm-opts-second a:link,
+.sm-opts-second a:visited {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.sm-opts-second a:hover,
+.sm-opts-second a:active {
+    color: black;
+    text-decoration: underline;
+}
+
+  .sm-opts-container {
+    display: block;
+    position: absolute;
+    top: 60%;
+    left: 0;
+    z-index: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #fff;
+    text-align: center;
+    background-color: transparent;
+  } 
+
+  footer {
+    padding: 0px 15px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    /* background: orange; */
+  }
+
+  .left-header {
+    padding-left: 6%;
+  }
+
+  .sm-opts-container {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    /* background: blue; */
+  }
+
+  .left-header {
+    padding-left: 6%;
+  }
+
+  .sm-opts-container {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+    /* background: gold; */
+  }
+
+  .sm-opts-container {
+    display: none;
+  }
+}

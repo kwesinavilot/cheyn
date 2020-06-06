@@ -1,9 +1,9 @@
 <?php
     if($this->session->flashdata('reset_success')) {
-        echo "An email from us is on its way to " . $this->session->flashdata('reset_success') . ". Please follow the instructions therein to reset your password";
-        echo "<label class='container down-liner'>
-                <a href='' id='back-to-reset'>Used the wrong email?</a>
-            </label>";
+        echo "An email from us is on its way to <em>" . $this->session->flashdata('reset_success') . "</em>. Please follow the instructions therein to reset your password";
+        //echo "<label class='container down-liner'>
+                //<a href='' id='back-to-reset'>Used the wrong email?</a>
+            //</label>";
     } else {
         $attributes = array('id' => 'reset-form');     //Create main form attributes
 

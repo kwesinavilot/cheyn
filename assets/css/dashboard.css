@@ -1,6 +1,5 @@
 .totals {
     background: transparent;
-    display: flex;
 }
 
 .left-total {
@@ -64,4 +63,48 @@
 .btn {
     border-radius: 4px;
     border-color: rgb(204, 204, 204);
+}
+
+.sect-header {
+    text-align: center;
+}
+
+
+/* Very small devices */
+@media only screen and (max-width: 600px) {
+    .totals {
+        display: block;
+        padding: 0;
+    }
+
+    .left-total {
+        margin-bottom: 2%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .totals {
+        display: block;
+    }
+
+    .left-total {
+        margin-bottom: 1%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .totals {
+        display: flex;
+    }
+
+    .left-total {
+        margin-bottom: 0;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
 }

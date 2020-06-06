@@ -22,7 +22,7 @@
 
                     <aside duty="expenses-only-charts" class="col-lg-12 marg">
                         <?php //die(print_r($monthlies)); ?>
-                        <div duty="expenses-charts" class="shade chart-container" style="display:flex;">
+                        <div duty="expenses-charts" class="shade chartx-container">
                             <div duty="expenses-piechart" class="paddoff col-lg-6" style="width: 100%; height: 43vh;">
                                 <canvas id="expensesBarGraph"></canvas>
                             </div>
@@ -41,7 +41,7 @@
                                     <h4 style="margin:0;">All Expenses</h4>
                                 </div>
 
-                                <div class="pull-right col-lg-4 paddoff" style="float:right;">
+                                <div class="pull-right col-lg-4 col-md-4 col-sm-6 col paddoff" style="float:right;">
                                     <!-- Create Search -->
                                     <div class="search">
                                         <input id="search-expenses" class="form-control" type="search" placeholder="Search table here...">
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
 
-                            <div class="expenses-table">
+                            <div class="expenses-table table-responsive">
                                 <table class="table table-hover table-bordered">
                                     <thead>
                                         <th style="width: 12%;">Date</th>
@@ -130,30 +130,30 @@
                                         <h4 style="margin:0;">New Expenses Entry</h4>
                                     </div>
 
-                                    <div class="pull-right form-group col-lg-4 paddoff" style="margin:0; float:right;">
+                                    <div class="pull-right form-group resp-form col-lg-4 col-md-4 col-sm-4 col paddoff" style="float:right;">
                                         <label class="pull-left entry-label" style="width: 20%; float:left; text-align:end;">Date</label>
-                                        <input class="form-control pull-right" style="width:73%; float:right;" type="date" name="date" value="<?php echo set_value('date'); ?>">
+                                        <input class="form-control pull-right date" type="date" name="date" value="<?php echo set_value('date'); ?>">
                                         <?php echo form_error('date'); ?>
                                     </div>
                                 </div>
 
                                 <div class="main-entry-form row">
                                     <div class="top-entry col-lg-12 marg-sub" style="padding:0;">
-                                        <div class="pull-left form-group col-lg-4" style="margin:0; float:left;">
+                                        <div class="pull-left form-group resp-form col-lg-4 col-md-4 col-sm-4 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 10%; float:left;">Title</label>
-                                            <input class="form-control pull-right" style="width:88%; float:right;" max-length="100" type="text" name="title" value="<?php echo set_value('title'); ?>" placeholder="Enter entry title...">
+                                            <input class="form-control pull-right title" max-length="100" type="text" name="title" value="<?php echo set_value('title'); ?>" placeholder="Enter entry title...">
                                             <?php echo form_error('title'); ?>
                                         </div>
 
-                                        <div class="pull-left form-group col-lg-4" style="margin:0; float:left;">
+                                        <div class="pull-left form-group resp-form col-lg-4 col-md-4 col-sm-4 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 20%; float:left;">Amount</label>
-                                            <input class="form-control pull-right" style="width:78%; float:right;" max-length="9" type="text" name="amount" value="<?php echo set_value('amount'); ?>" placeholder="Enter the amount...">
+                                            <input class="form-control pull-right amount" max-length="9" type="text" name="amount" value="<?php echo set_value('amount'); ?>" placeholder="Enter the amount...">
                                             <?php echo form_error('amount'); ?>
                                         </div>
 
-                                        <div class="pull-right form-group col-lg-4" style="margin:0; float:right;">
+                                        <div class="pull-right form-group resp-form col-lg-4 col-md-4 col-sm-4 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 20%; float:left;">Bucket</label>
-                                            <select id="bucket" name="bucket" class="form-control" style="width: 78%;">
+                                            <select id="bucket" name="bucket" class="form-control bucket">
                                                 <?php
                                                     //die(print_r($expenses));
                                                     if(empty($buckets)) {
@@ -182,7 +182,7 @@
                                         <textarea class="form-control" rows="5" name="description" max-length="5000" value="<?php echo set_value('description'); ?>" placeholder="Enter description here..."></textarea>
                                     </div>
 
-                                    <div id="control" style="margin-left: 40%;" class="col-lg-3">
+                                    <div id="control" style="margin-left: 40%;" class="col-lg-3 col-md-5 col-sm-6">
                                         <button type="submit" class="col-lg-12 btn btn-outline-success">Save Entry</button>
                                     </div>
                                 </div>

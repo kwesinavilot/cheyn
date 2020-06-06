@@ -19,10 +19,10 @@
             $this->load->view("dashboard", $data);
         }
 
-        public function logout() {
-            $this->session->sess_destroy();
-            redirect("home");
-        }
+        // public function logout() {
+        //     $this->session->sess_destroy();
+        //     redirect("home");
+        // }
 
         public function getHighlights() {
             $cheynId = $this->session->cheynId;

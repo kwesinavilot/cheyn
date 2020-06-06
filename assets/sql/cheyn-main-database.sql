@@ -13,6 +13,7 @@ CREATE TABLE users (
     firstname VARCHAR(25) NOT NULL,
     lastname VARCHAR(30) NOT NULL,
     email VARCHAR(50) NOT NULL UNIQUE,
+    picture VARCHAR(32),
     date_created TIMESTAMP
 );
 
@@ -63,6 +64,39 @@ CREATE TABLE buckets (
     date_created TIMESTAMP,
     FOREIGN KEY(cheynID)
     REFERENCES users(cheynID) 
+);
+
+CREATE TABLE targets (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    cheynID VARCHAR(10) NOT NULL,
+    name VARCHAR(30) NOT NULL,            #holds only 25 chars for bucket name
+    short VARCHAR(10) NOT NULL UNIQUE,                  #the short name-related identifier for the bucket
+    target_amount  DECIMAL(8, 2) NOT NULL,         #the target amount they want to get
+    proposed_amount  DECIMAL(8, 2) NOT NULL,         #the proposed amount they should pay to meet the target
+    total_sofar  DECIMAL(8, 2) NOT NULL,         #the amount theyve accrued so far
+    date_created TIMESTAMP,
+    FOREIGN KEY(cheynID)
+    REFERENCES users(cheynID) 
+);
+
+CREATE TABLE target_entries (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    short VARCHAR(10) NOT NULL UNIQUE,                  #the short name-related identifier for the bucket
+    january DECIMAL(8, 2) NOT NULL,
+    february DECIMAL(8, 2) NOT NULL,
+    march DECIMAL(8, 2) NOT NULL,
+    april DECIMAL(8, 2) NOT NULL,
+    may DECIMAL(8, 2) NOT NULL,
+    june DECIMAL(8, 2) NOT NULL,
+    july DECIMAL(8, 2) NOT NULL,
+    august DECIMAL(8, 2) NOT NULL,
+    september DECIMAL(8, 2) NOT NULL,
+    october DECIMAL(8, 2) NOT NULL,
+    november DECIMAL(8, 2) NOT NULL,
+    december DECIMAL(8, 2) NOT NULL,
+    date_updated TIMESTAMP,
+    FOREIGN KEY(short)
+    REFERENCES targets(short)
 );
 
 -- SELECT 

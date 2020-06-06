@@ -8,10 +8,10 @@
         }
 
         //Function to log out
-        public function logout() {
-            $this->session->sess_destroy();
-            redirect("home");
-        }
+        // public function logout() {
+        //     $this->session->sess_destroy();
+        //     redirect("home");
+        // }
 
         //Function to insert new entries into the database
         public function insert_record() {

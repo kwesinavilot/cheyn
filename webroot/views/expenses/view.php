@@ -12,13 +12,6 @@
             <!-- PAGE CONTENT -->
             <div class="content">
                 <section duty="main-content" class="xcontent">
-                    <!-- <div class="col-lg-12 pageheader">
-                        <div class="col-lg-12">
-                            <h4><?php print ucwords(HEADER); ?></h4>
-                            <hr>
-                        </div>
-                    </div> -->
-
                     <aside class="col-lg-12 marg">
                         <div duty="further-entry-details" class="shade chart-container">
                             <div class="pageheader marg-sub col-lg-12 paddoff">
@@ -26,8 +19,8 @@
                                     <h4 style="margin:0;"><?php print ucwords(HEADER); ?></h4>
                                 </div>
 
-                                <div class="pull-right col-lg-4 paddoff" style="float:right;">
-                                    <nav class="navbar navbar-expand-sm paddoff" style="float:right;">
+                                <div class="pull-right col-lg-5 col-md-6 col-sm-12 col paddoff" style="float:right;">
+                                    <nav class="navbar navbar-expand-sm paddoff ed_opts">
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
                                                 <a class="nav-link" href="<?php print base_url() . 'expenses/edit/' . $content->id; ?>">Edit</a>

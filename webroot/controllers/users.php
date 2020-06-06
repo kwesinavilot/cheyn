@@ -55,7 +55,14 @@
             // Check if form has been submitted
             if ($this->form_validation->run() == FALSE) {       //if it hasn't submitted or there are erros
                 $this->session->set_flashdata('erros', 'signup');
-                $this->load->view("home");      //redirect to the home page
+
+                //Check the mode before redirecting
+                if($this->session->mode == "mobile") {
+                    $this->load->view("signup");      //redirect to the mobile signup page
+                } else {
+                    die($this->session->mode);
+                    $this->load->view("home");      //redirect to the home page
+                }
             } else {        //If everything is ok,
                 $this->name = $this->input->post('firstname');        //Get the user's first name
                 $this->user_email = $this->input->post('email');           //Get the user's email
@@ -72,14 +79,35 @@
                         //$this->session->set_tempdata('still-signing-up', 'yes', 300);         //Let's know that we're signing up
                         
                         $this->email->sendMail($this->name, $this->user_email, 'join');                        //Send sign up email
-                        redirect('home');
+
+                        //Check the mode before redirecting
+                        if($this->session->mode == "mobile") {
+                            redirect('login');      //redirect to the mobile login page
+                        } else {
+                            die($this->session->mode);
+                            redirect('home');      //redirect to the home page
+                        }
                     } else {
                         $this->session->set_flashdata('failed_signup', 'Unable to sign you up. Try again later');
-                        redirect('home');
+
+                        //Check the mode before redirecting
+                        if($this->session->mode == "mobile") {
+                            redirect('signup');      //redirect to the mobile signup page
+                        } else {
+                            die($this->session->mode);
+                            redirect('home');      //redirect to the home page
+                        }
                     }
                 } else {                                    //Notify of unavailability
-                    $this->session->set_flashdata('failed_signup', 'Email already exists');
-                    redirect('home');
+                    $this->session->set_flashdata('failed_signup', 'Account taken already. Try a different one');
+
+                    //Check the mode before redirecting
+                    if($this->session->mode == "mobile") {
+                        redirect('signup');      //redirect to the mobile signup page
+                    } else {
+                        die($this->session->mode);
+                        redirect('home');      //redirect to the home page
+                    }
                 }
                 
             }
@@ -88,6 +116,8 @@
 
         // THis is the login function
         public function login() {
+            //die($this->session->mode);
+
             //set rules for email
             $this->form_validation->set_rules('email', 'Email', 'trim|required|max_length[100]|min_length[5]|valid_email',
                                                 array('max_length' => 'This field can contain only 100 letters',
@@ -106,7 +136,18 @@
             // Check if form has been submitted
             if ($this->form_validation->run() == FALSE) {       //if it hasn't submitted or there are erros
                 $this->session->set_flashdata('erros', 'login');
-                $this->load->view("home");      //redirect to the home page
+
+                //die($this->session->mode);
+
+                //Check the mode before redirecting
+                if($this->session->mode == "mobile") {
+                    //die($this->session->mode);
+                    $this->load->view("login");      //redirect to the mobile login page
+                } else {
+                    //die($this->session->mode);
+                    $this->load->view("home");      //redirect to the home page
+                }
+
             } else {        //If everything is ok,
                 //Get from post
                 $this->user_email = $this->input->post('email');
@@ -129,11 +170,27 @@
                     } else {
                         //Notify of error
                         $this->session->set_flashdata('failed_login', 'We can\'t log you in at the moment. Please try again later');
-                        redirect('home');
+                        
+                        //Check the mode before redirecting
+                        if($this->session->mode == "mobile") {
+                            redirect('login');      //redirect to the mobile login page
+                        } else {
+                            //die($this->session->mode);
+                            redirect('home');      //redirect to the home page
+                        }
+                        
                     }
                 } else {
                     $this->session->set_flashdata('failed_login', 'Incorrect email or password');
-                    redirect('home');
+                    
+                    //Check the mode before redirecting
+                    if($this->session->mode == "mobile") {
+                        //die($this->session->mode);
+                        redirect('login');      //redirect to the mobile login page
+                    } else {
+                        //die($this->session->mode);
+                        redirect('home');      //redirect to the home page
+                    }
                 } 
             }
             
@@ -160,9 +217,12 @@
 
                 //If the account isn't taken, which means we don't have that email in our system, 
                 if ($this->available == true) {
+                    $this->email->sendMail("", $this->user_email, 'non_existent');                        //Password reset notification email
+
                     $this->session->set_flashdata('reset_success', $this->input->post('email'));
                     redirect('home');
                 } else {                                    //If it is taken, meaning it is a real email, send right email
+                    $this->email->sendMail("", $this->user_email, 'reset_start');                        //Password reset notification email, real
                     $this->session->set_flashdata('reset_success', $this->input->post('email'));
                     redirect('home');
                 }
@@ -171,9 +231,9 @@
         }
 
         //This function logs the user out
-        public function logout() {
-            $this->session->sess_destroy();
-            redirect("home");
-        }
+        // public function logout() {
+        //     $this->session->sess_destroy();
+        //     redirect("home");
+        // }
     }
 ?>

@@ -9,10 +9,10 @@
             $this->load->view("buckets/index", $data);
         }
 
-        public function logout() {
-            $this->session->sess_destroy();
-            redirect("home");
-        }
+        // public function logout() {
+        //     $this->session->sess_destroy();
+        //     redirect("home");
+        // }
 
         //Function to add new buckets into the database
         public function add_bucket() {

@@ -52,7 +52,7 @@
                                     ."Cheyn is a platform purely geared towards helping your manage your financial life without breaking a sweat."
                                     ."To start discovering this great opportunity, please verify your account by clicking the link below:\n\n";
 
-                    $this->body .= "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/verify/?yell=j78767jmh66\n\n"
+                    $this->body .= "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/verify/?yell=j78767jmh66\n\n"
                                     ."Feel free to explore the Cheyn universe. Thank you.\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
@@ -74,7 +74,7 @@
 
                     $this->body .= "If this wasn't you and you believe your account may have been compromised, then you need to take a few steps to make sure your account is secure."
                                     . " To start, reset your password now using the link below:\n"
-                                    . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/reset\n\n"
+                                    . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/reset\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
                 break;
@@ -89,7 +89,7 @@
                                     . "You logged in at " . date('g:i A') . " from " . $_SERVER['REMOTE_ADDR'] . "\n\n"
                                     . "If this wasn't you and you believe your account may have been compromised, then you need to take a few steps to make sure your account is secure."
                                     . "To start, reset your password now using the link below:\n"
-                                    . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/vendors.Cheyn.com/reset\n\n"
+                                    . "http://" . $_SERVER['SERVER_NAME'] . "/vendors.Cheyn.com/reset\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
                 break;
@@ -117,7 +117,7 @@
                                         . "These newsletters will help you stay on top of the game and be proactive to the opportunities that comes with them.". PHP_EOL . PHP_EOL
                                         . "Thanks again for signing up and we hope to give you the best gist in the Cheyn universe.". PHP_EOL . PHP_EOL
                                         . "If you want to unsubscribe too, please click the link below:\n"
-                                        . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/subscriptions/?opt=unscriber&recPoint=$this->recipient\n\n"
+                                        . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/subscriptions/?opt=unscriber&recPoint=$this->recipient\n\n"
                                         . "Yours sincerely,\n"                    
                                         . "Your Cheyn Team.";
                 break;
@@ -133,7 +133,7 @@
                                     . "These newsletters will help you stay on top of the game and be proactive to the opportunities that comes with them.". PHP_EOL . PHP_EOL
                                     . "Thanks again for signing up initially and we hope to see you subscribe again.". PHP_EOL . PHP_EOL
                                     . "If you want to subscribe now, please click the link below:\n"
-                                    . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/subscriptions/?opt=scriber&recPoint=$this->recipient\n\n"
+                                    . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/subscriptions/?opt=scriber&recPoint=$this->recipient\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
                 break;
@@ -169,7 +169,7 @@
                 //                     }
 
                 //     $this->body .= PHP_EOL . "If you didn't make this change, let us know right away by using the link below:\n"
-                //                     . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/custcare/?rec=yes&ish=unauth_add_change\n\n"
+                //                     . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/custcare/?rec=yes&ish=unauth_add_change\n\n"
                 //                     . "Yours sincerely,\n"                    
                 //                     . "Your Cheyn Team.";
                                     
@@ -178,17 +178,35 @@
                 /**
                  * Notify the user that they just requested for a password reset link.
                  */
-                case 'reset':
+                case 'reset_start':
                     //$reset = new ResetFactory();
                     //$this->resetCode = $reset->getCode($this->recipient);
                     //die($this->resetCode);
 
                     $this->subject = "Here's Your Password Reset Link";
-                    $this->body = "Hi, $this->name, did you forget your Cheyn password?\n"
+                    $this->body = "Hi, did you forget your Cheyn password?\n"
                                     ."No problem. We are here to help you get back on track. Click on the link below to change your password\n\n"
-                                        ."http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/reset/?yell=$this->resetCode\n\n"
+                                        ."http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/reset/?yell=3233456\n\n"
                                     ."We suggest making your password easy to remember, but also as strong as possible. Try not to use any word that can be found in the dictionary, but do use a combination of upper and lower-case letters along with numbers and/or special characters\n\n"
                                     ."If you did not request a password reset, then simply ignore this email and no changes will be made.\n\n"
+                                    . "Have a great day!\n"                    
+                                    . "Your Cheyn Team.";
+                break;
+
+                /**
+                 * Notify the user that they just requested for a password reset link without a legit account.
+                 */
+                case 'non_existent':
+                    $this->subject = "You Gotta Have An Account To Reset Its Password";
+                    $this->body = "Hello, we noticed that you wanted to change the Cheyn password of an account that doesn't exist.\n"
+                                    ."You see, that's quite impossible. To reset the password of an account, you need to have actually created that account.\n"
+                                    ."If you still want to have a feel of how our password reset system works, that's totally fine. Go ahead and click <a>here</a> to signup, log out, then reset your password.\n"
+                                    ."We bet you, there's nothing much to see there - trust us, it's a total waste of time.\n\n";
+
+                    $this->body .= "Rather, let's tell you where all the action is. You see, a lot of people want to be financially free but don't know how. Cheyn is therefore a platform simplified for tracking and managing your personal finances.\n"
+                                    ."It is so because we believe that the basic key to wealth is to know where your money comes from and where it goes to.\n\n";
+                                    
+                    $this->body .= "All you have to do is to sign up for an account - for real this time - and stick to updating your spendings.\n\n"
                                     . "Have a great day!\n"                    
                                     . "Your Cheyn Team.";
                 break;
@@ -208,7 +226,7 @@
 
                     $this->body .= "If you did this, then you can safely disregard this email.\n"
                                     . "If you did not make this change and believe your Cheyn account has been compromised, please contact us using the link below:\n"
-                                    . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/hacked\n\n"
+                                    . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/hacked\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
                 break;
@@ -222,7 +240,7 @@
                                     . "This password change was done on " . date('F j, Y') . " at " . date('g:i A') . "\n\n";
 
                     $this->body .= "If you did not make this change and believe your Cheyn account has been compromised, please contact us using the link below:\n"
-                                    . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/custcare/?rec=yes&ish=unauth_pass_change\n\n"
+                                    . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/custcare/?rec=yes&ish=unauth_pass_change\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
                 break;
@@ -241,7 +259,7 @@
                                     . "Email: " . $this->CI->session->email . "\n";
 
                     $this->body .= "\nIf you didn't make this change, let us know right away by using the link below:\n"
-                                    . "http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/www.cheyn.com/custcare/?rec=yes&ish=unauth_det_change\n\n"
+                                    . "http://" . $_SERVER['SERVER_NAME'] . "/www.cheyn.com/custcare/?rec=yes&ish=unauth_det_change\n\n"
                                     . "Yours sincerely,\n"                    
                                     . "Your Cheyn Team.";
                                     
@@ -256,6 +274,7 @@
                                     . "This shows how we at Cheyn have you at heart to deliver only the best and quality products at affordable prices.";
                 break;
             }
+
 
             $this->CI->email->from($this->sender, 'Cheyn Team');        //Set the sender email
             $this->CI->email->to($this->recipient);                     //Set the recipient email

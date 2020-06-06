@@ -46,4 +46,25 @@ $(document).ready(function(){
           }
       }
     );
+
+    $('#menus-toggle').click(
+      function() {
+        if ($('#menus-toggle').hasClass('hide-sidebar')) {
+          //alert('Yes!');
+          $('.sidebar').css("max-width", "100%").css("right", "65%");
+          $('#menus-toggle').empty();
+          $('#menus-toggle').html("<span class='closebtn'>&times;</span>");
+          $('#menus-toggle').removeClass('hide-sidebar');
+          $('#menus-toggle').addClass('show-sidebar')
+        } else {
+          // alert('No!');
+          $('.sidebar').css("max-width", "0%").css("right", "80%");
+          $('#menus-toggle').empty();
+          $('#menus-toggle').html("<span class='navbar-toggler-icon'></span>");
+          $('#menus-toggle').removeClass('show-sidebar');
+          $('#menus-toggle').addClass('hide-sidebar')      
+        }
+
+      }
+    );
 });

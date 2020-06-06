@@ -6,10 +6,10 @@
             $this->load->view("accounts");
         }
 
-        public function logout() {
-            $this->session->sess_destroy();
-            redirect("home");
-        }
+        // public function logout() {
+        //     $this->session->sess_destroy();
+        //     redirect("home");
+        // }
 
         public function update_details () {
             //set rules for firstname
@@ -115,25 +115,41 @@
             //die(print_r($_FILES));
             //$this->filename = $_FILES['picture']['name'];           //Set the name of the file to be uploaded
 
-            $config['upload_path']       = base_url() . '/assets/profile/';
+            $cheynId = $this->session->cheynId;     //Get the current user's ID
+
+            $config['upload_path']       = './assets/profile/';
+            //die($config['upload_path']);
             $config['allowed_types']     = 'gif|jpg|png';
             $config['file_ext_tolower']  = TRUE;
             $config['encrypt_name']      = TRUE;
-            $config['max_size']          = 2000;
-            $config['max_width']         = 1500;
-            $config['max_height']        = 1500;
+            $config['max_size']          = 0;
+            $config['max_width']         = 0;
+            $config['max_height']        = 0;
 
             $this->load->library('upload', $config);
 
             //Check if the uploaded didn't work...
-            if (!$this->upload->do_upload('profile')) {
+            if (!$this->upload->do_upload('profile-picture')) {
                 $error = array('error' => $this->upload->display_errors());             //If it didn't get the errors
 
                 $this->load->view('accounts', $error);                               //Now display them
             } else {                                                                    //If it worked...
                 $data = array('upload_data' => $this->upload->data());                  //Get the response
+                //die(print_r($data));
+                $filename = $data['upload_data']['file_name'];
 
-                $this->load->view('accounts', $data);                             //Go to the account page
+                //Try updating the user's picture in the database
+                if ($this->User_model->updatePicture($cheynId, $filename)) {       //If we successfully inserted picture
+                    $this->session->set_flashdata('update_picture_success', 'Profile picture updated successfully');
+                    //$this->load->view('accounts');                             //Go to the account page
+                    redirect('accounts');
+                } else {
+                    $this->session->set_flashdata('update_picture_failure', 'Couldn\'t update profile picture! Please try again');
+                    //$this->load->view('accounts');                             //Go to the account page
+                    redirect('accounts');
+                }
+
+                //$this->load->view('accounts', $data);                             //Go to the account page
             }
         }
     }

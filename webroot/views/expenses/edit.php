@@ -1,5 +1,5 @@
 <?php
-    define('TITLE', ucwords($content->title) . " | Cheyn - Escaping The Rat Race");
+    define('TITLE', "Edit Entry: " . ucwords($content->title) . " | Cheyn - Escaping The Rat Race");
     define('HEADER', $content->title);
 
     //$del = base_url() . 'expenses/delete/' . $content->id;
@@ -12,66 +12,7 @@
             <!-- PAGE CONTENT -->
             <div class="content">
                 <section duty="main-content" class="xcontent">
-                    <!-- <div class="col-lg-12 pageheader">
-                        <div class="col-lg-12">
-                            <h4><?php print ucwords(HEADER); ?></h4>
-                            <hr>
-                        </div>
-                    </div> -->
-
-                    <aside class="col-lg-12 marg" style="display:none;">
-                        <div duty="further-entry-details" class="shade chart-container">
-                            <div class="pageheader marg-sub col-lg-12 paddoff">
-                                <div class="pull-left" style="padding: 0.5%; float:left;">
-                                    <h4 style="margin:0;"><?php print ucwords(HEADER); ?></h4>
-                                </div>
-
-                                <div class="pull-right col-lg-4 paddoff" style="float:right;">
-                                    <nav class="navbar navbar-expand-sm paddoff" style="float:right;">
-                                        <ul class="navbar-nav">
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="<?php print base_url() . 'expenses/delete/' . $content->id; ?>">Delete</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-
-                                <hr style="clear: both;">
-
-                                <div duty="entry-title" class="pull-left col-lg-12">
-                                    <ul class="list-group list-group-horizontal">
-                                        <li class="list-group-item">
-                                            <span>DATE:</span> <?php $date = date_create($content->entry_date); echo date_format($date,"F, j Y");//$content->entry_date; ?>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <span>BUCKET:</span> <?php print ucwords($content->bucket); ?>
-                                        </li>
-
-                                        <li class="list-group-item">
-                                            <span>AMOUNT:</span> <?php print $content->amount; ?>
-                                        </li>
-                                    </ul> 
-                                </div>
-                            </div>
-
-                            <div duty="entry-content" class="col-lg-12 description">
-                                <span>DESCRIPTION</span>
-
-                                <p>
-                                    <?php 
-                                        if(empty($content->description)) {
-                                            echo "You didn't add a description for this entry.";
-                                        } else {
-                                            echo $content->description;
-                                        }
-                                    ?>
-                                </p>
-                            </div>
-                        </div>
-                    </aside>
-
-                    <aside class="col-lg-12 marg">
+                    <div class="col-lg-12 marg">
                         <div duty="expenses-entry" class="shade col-lg-12">
 
                             <?php 
@@ -86,30 +27,30 @@
                                         <h4 style="margin:0;">Update Expense Entry</h4>
                                     </div>
 
-                                    <div class="pull-right form-group col-lg-4 paddoff" style="margin:0; float:right;">
+                                    <div class="pull-right form-group resp-form col-lg-4 col-md-4 col-sm-4 col paddoff" style="float:right;">
                                         <label class="pull-left entry-label" style="width: 20%; float:left; text-align:end;">Date</label>
-                                        <input class="form-control pull-right" style="width:73%; float:right;" type="date" name="date" value="<?php echo $content->entry_date; ?>">
+                                        <input class="form-control pull-right date" type="date" name="date" value="<?php echo $content->entry_date; ?>">
                                         <?php echo form_error('date'); ?>
                                     </div>
                                 </div>
 
                                 <div class="main-entry-form row">
                                     <div class="top-entry col-lg-12 marg-sub" style="padding:0;">
-                                        <div class="pull-left form-group col-lg-4" style="margin:0; float:left;">
+                                        <div class="pull-left form-group resp-form col-lg-4 col-md-4 col-sm-4 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 10%; float:left;">Title</label>
-                                            <input class="form-control pull-right" style="width:88%; float:right;" max-length="100" type="text" name="title" value="<?php echo $content->title; ?>" placeholder="Enter entry title...">
+                                            <input class="form-control pull-right title" max-length="100" type="text" name="title" value="<?php echo $content->title; ?>" placeholder="Enter entry title...">
                                             <?php echo form_error('title'); ?>
                                         </div>
 
-                                        <div class="pull-left form-group col-lg-4" style="margin:0; float:left;">
+                                        <div class="pull-left form-group resp-form col-lg-4 col-md-4 col-sm-4 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 20%; float:left;">Amount</label>
-                                            <input class="form-control pull-right" style="width:78%; float:right;" max-length="9" type="text" name="amount" value="<?php echo $content->amount; ?>" placeholder="Enter the amount...">
+                                            <input class="form-control pull-right amount" max-length="9" type="text" name="amount" value="<?php echo $content->amount; ?>" placeholder="Enter the amount...">
                                             <?php echo form_error('amount'); ?>
                                         </div>
 
-                                        <div class="pull-right form-group col-lg-4" style="margin:0; float:right;">
+                                        <div class="pull-right form-group resp-form col-lg-4 col-md-4 col-sm-4 col" style="float:left;">
                                             <label class="pull-left entry-label" style="width: 20%; float:left;">Bucket</label>
-                                            <select id="bucket" name="bucket" class="form-control" style="width: 78%; float:right;">
+                                            <select id="bucket" name="bucket" class="form-control bucket">
                                                 <?php
                                                     if(empty($buckets)) {
                                                         echo "
@@ -135,13 +76,13 @@
                                         <textarea class="form-control" rows="5" name="description" max-length="5000" placeholder="Enter description here..."><?php print $content->description; ?></textarea>
                                     </div>
 
-                                    <div id="control" style="margin-left: 40%;" class="col-lg-3">
+                                    <div id="control" style="margin-left: 40%;" class="col-lg-3 col-md-5 col-sm-6">
                                         <button type="submit" class="col-lg-12 btn btn-outline-success">Update Entry</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
-                    </aside>
+                    </div>
                 </section>
 
                 <?php

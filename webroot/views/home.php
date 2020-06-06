@@ -6,6 +6,7 @@
 
     //die("http://" . $_SERVER['SERVER_NAME'] . "/Cheyn/");
     define('TITLE', "Home | Cheyn - Escaping The Rat Race");
+    //die($this->session->mode);
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +33,13 @@
     <body>
         <div id="anchor">
             <header class="row">
-                <aside class="left-header col-lg-6">
-                    <h4>CHEYN</h4>
+                <aside class="left-header col-lg-6 col-md-6 col-sm-6 col">
+                    <h4>
+                        <a href="<?php echo base_url(); ?>">CHEYN</a>
+                    </h4>
                 </aside>
 
-                <aside class="right-header col-lg-6">
+                <aside class="right-header col-lg-6 col-md-6 col-sm-6">
                     <nav class="right-header-opts">
                         <ul class="nav">
                             <li class="nav-item">
@@ -130,9 +133,19 @@
             </header>
 
             <section duty="content" class="content row">
-                <div class="center-text">
+                <div class="center-text col-lg-12 col-sm-12 paddoff col marg">
                     <h5>Wealth!</h5>
                     <p>Let's help you get to your wealth zone...</p>
+                </div>
+
+                <div class='sm-opts-container col-sm-12'>
+                    <div class='sm-opts-first col-sm-6'>
+                        <a class='sm-login' href="<?php echo base_url();?>login">Login</a>
+                    </div>
+
+                    <div class='sm-opts-second'>
+                        <a class='sm-signup' href="<?php echo base_url();?>signup">Sign Up</a>
+                    </div>
                 </div>
             </section>
 

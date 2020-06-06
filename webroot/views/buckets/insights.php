@@ -24,7 +24,7 @@
                                     <h4 style="margin:0;"><?php print ucwords(HEADER); ?></h4>
                                 </div>
 
-                                <div class="pull-right col-lg-4 paddoff" style="float:right;">
+                                <div class="pull-right paddoff" style="float:right;">
                                     <nav class="navbar navbar-expand-sm paddoff" style="float:right;">
                                         <ul class="navbar-nav">
                                             <li class="nav-item">

@@ -10,6 +10,7 @@
         public $date_created;
         public $isLoggedIn;
         public $check_email;
+        public $picture;
 
         function __construct() {
 			//If the isLoggedIn is set to true
@@ -123,6 +124,7 @@
 				$this->firstname = $resultSet->firstname;
 				$this->lastname = $resultSet->lastname;
                 $this->email = $resultSet->email;
+                $this->picture = $resultSet->picture;
 				$this->date_created = $resultSet->date_created;
 				$this->isLoggedIn = true;
 
@@ -143,6 +145,7 @@
                 'firstname' => $this->firstname,
 			    'lastname' => $this->lastname,
                 'email' => $this->email,
+                'picture' => $this->picture,
                 'date_created' => $this->date_created,
                 'loggedIn' => $this->isLoggedIn
             );
@@ -156,6 +159,7 @@
 			$this->firstname = $this->session->firstname;
 			$this->lastName = $this->session->lastname;
             $this->email = $this->session->email;
+            $this->picture = $this->session->picture;
 			$this->date_created = $this->session->date_created;
 			$this->isLoggedIn = true;
         }
@@ -241,12 +245,45 @@
 
             //If everything checks out...
             if($this->db->affected_rows() == 1) {
-                return true;            //return true
+                //die(print_r($this->session->userdata));
+                $this->getUserDetails($cheynId);
+                return true;                                //return true
             } else {
                 return false;           //say die
             }
         }
 
+        //Change the user's profile picture
+        public function updatePicture($cheynId, $new_picture){
+            //Check for the email
+            $this->db->select('picture');                         //Select the user's current picture
+            $this->db->where('cheynID', $cheynId);          //Where cheynID = the passed cheynId
+            $query = $this->db->get('users');               //from the user's table
+            $result = $query->row();
+            //die(print_r($query->row()));
+
+            if (file_exists('./assets/profile/' . $result->picture)) {
+                //die("File $result->picture found");
+                unlink('./assets/profile/' . $result->picture);
+            }
+
+            //Update the profile picture of the user in the users table
+            // UPDATE `users` SET `picture` = 'new_picture' WHERE `CheynId` = current user's CheynId
+            $this->db->set('picture', $new_picture);
+            $this->db->where('CheynID', $cheynId);
+            $this->db->update('users');
+
+            //If everything checks out...
+            if($this->db->affected_rows() == 1) {
+                //die(print_r($this->session->userdata));
+                $this->getUserDetails($cheynId);
+                return true;                                //return true
+            } else {
+                return false;           //say die
+            }
+        }
+
+        //Verify the user's password
         public function verify_password($cheynId) {
             $current_password = $this->input->post('current_password');
 
