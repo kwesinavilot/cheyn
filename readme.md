@@ -22,14 +22,6 @@ guide change log](https://github.com/KwesiNavilot/cheyn/releases).
 Please note that although this is the current stable version of the project,
 this repo also contains in-development code for future releases.
 
-## Server Requirements
-
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
 ## Using Cheyn
 We believe we have made it faily easy to understand, use and remember how the Cheyn platform works.
 Regardless, if you face any difficulty, do not hesitate to reach out to us [here](mailto:teamserviceskeep@gmail.com).
