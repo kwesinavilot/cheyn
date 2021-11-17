@@ -16,8 +16,8 @@ The system features:
 
 ## Release Information, Changelog and New Features
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/KwesiNavilot/cheyn/releases>`_.
+You can find a list of all changes for each release in the [user
+guide change log](https://github.com/KwesiNavilot/cheyn/releases).
 
 Please note that although this is the current stable version of the project,
 this repo also contains in-development code for future releases.
@@ -29,13 +29,6 @@ PHP version 5.6 or newer is recommended.
 It should work on 5.3.7 as well, but we strongly advise you NOT to run
 such old versions of PHP, because of potential security and performance
 issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
 
 ## Using Cheyn
 We believe we have made it faily easy to understand, use and remember how the Cheyn platform works.
